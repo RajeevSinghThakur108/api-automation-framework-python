@@ -2,8 +2,6 @@ import requests as r
 from src.config.config import BASE_URL
 from src.utils.logger import get_logger
 
-
-
 class APIClient:
 
     def __init__(self):
@@ -13,6 +11,14 @@ class APIClient:
 
     def get(self , endpoint , **kwargs):
         url = self.base_url + endpoint
+        self.logger.info(f"GET Request: {url}")
         response = self.session.get(url, **kwargs)
+        self.logger.info(f"Response Status: {response.status_code}")
+        return response
+    
+    def post(self, endpoint, **kwargs):
+        url = self.base_url + endpoint
+        self.logger.info(f"POST Request: {url}")
+        response = self.session.post(url, **kwargs)
         self.logger.info(f"Response Status: {response.status_code}")
         return response
