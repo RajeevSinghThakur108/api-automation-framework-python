@@ -1,8 +1,8 @@
-from src.clients.api_client import APIClient
+# from src.clients.api_client import APIClient
 from src.utils.assertions import assert_status_code
 
-client = APIClient()
-def test_create_post():
+# client = APIClient()
+def test_create_post(client):
 
     payload = {
         "title": "Python API",
