@@ -15,8 +15,10 @@ from src.utils.assertions import (
 
 def test_get_post(client):
     res = client.get("/posts/1")
-    # assert res.status_code == 200
+    assert res.status_code == 200
+    print("assertion")
     assert_status_code(res,200)
     assert_json_value(res, "id", 1)
     assert_response_time(res, 2)
     assert_content_type(res, "application/json")
+    
