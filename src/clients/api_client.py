@@ -23,7 +23,7 @@ class APIClient:
             method = method, 
             url = url, 
             timeout=DEFAULT_TIMEOUT,
-                **kwargs
+            **kwargs
             )
             self.logger.info(f"Response Status: {response.status_code}")
             return response 
