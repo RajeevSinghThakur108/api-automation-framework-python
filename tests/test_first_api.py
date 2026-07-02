@@ -22,3 +22,4 @@ def test_get_post(client):
     # assert_response_time(res, 2)
     assert_content_type(res, "application/json")
     
+    
